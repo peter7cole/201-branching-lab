@@ -18,5 +18,6 @@ Branch 4: QUESTION4
 Branch 5: QUESTION5
     array multiplication
 
-
+Branch 6: QUESTION6
+    array multiplication of any length
 

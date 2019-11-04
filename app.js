@@ -1,4 +1,5 @@
 'use strict';
+
 /////////////////////////////////////
 // Problem 1 (this is your demo that we'll solve in class)
 // Write a function called sum() that takes in two numbers as arguments and then returns an array
@@ -37,7 +38,7 @@ testSum(4,7);
 // "The product of 5 and 9 is 45."
 
 // Test this function by hand in the console to get it working, and when you think it is finished,
-// uncomment the call for the testMultiply() function and see if the test passes.*/
+// uncomment the call for the testMultiply() function and see if the test passes.
 
 // Write your code here
 
@@ -163,11 +164,11 @@ testSumArray(testArray);
 
 // Write your code here
 
-function multiplyArray(multArr) {
+function multiplyArray(testArray) {
     var myArray = [];
     var productAnswer = multiply(multiply(testArray[0], testArray[1])[0], testArray[2])[0];
     myArray[0] = productAnswer;
-        console.log(`sumAnswer: ${productAnswer}`);
+        console.log(`productAnswer: ${productAnswer}`);
     var resultAnswer = `The numbers ${testArray[0]},${testArray[1]},${testArray[2]} have a product of ${productAnswer}.`;
     myArray[1] = resultAnswer;
         console.log(`resultAnswer: ${resultAnswer}`);
@@ -185,25 +186,58 @@ testMultiplyArray(testArray);
 // Don't forget to create a new branch for your work on the next question, if you attempt it.
 
 /////////////////////////////////////
-/* STRETCH GOAL: Problem 6
-Write a function called multiplyAnyArray() that takes an array of numbers of any length as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and concatenates a message using the arguments that were passed into the function:
+// STRETCH GOAL: Problem 6
 
-"The numbers 1,2,3,4,5 have a product of 120."
+// Write a function called multiplyAnyArray() that takes an array of numbers of any length as its argument
+//  and returns an array whose first element is the product of those numbers,
+// and the second element is a string that EXACTLY follows this example
+// and concatenates a message using the arguments that were passed into the function:
 
-IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
+// "The numbers 1,2,3,4,5 have a product of 120."
 
-This function should be dynamic, accepting an array of any length.
+// IMPORTANT DETAIL: You may not use the arithmetic operator * in this function.
+// To do multiplication, use your multiply() function that you've already created.
+// You're going to have to be resourceful to figure out how to do this.
+// However, you may continue to use the + operator for string concatenation.
 
-Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
+// This function should be dynamic, accepting an array of any length.
+
+// Test this function by hand in the console to get it working,
+// and when you think it is finished, uncomment the call for the
+// testMultiplyAnyArray() function and see if the test passes.
 
 // Write your code here
-/* var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
-function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+var testDynamicArray = [1,2,3,4,5];
 
-} */
+function multiplyAnyArray(testDynamicArray) {
+    var myArray = [];
+    
+    // calculate product for any length array
+    var productAnswer = 1;
+    for (var i=0; testDynamicArray.length > i; i++) {
+        var result = multiply(productAnswer, testDynamicArray[i])[0];
+        productAnswer = result;
+    }
+    myArray[0] = productAnswer;
+        console.log(`productAnswer: ${productAnswer}`);
+    
+    // create String for any length array
+    var resultString = `${testDynamicArray[0]}`;
+    for (var i=1; testDynamicArray.length > i; i++) {
+        resultString = resultString.concat(`,${testDynamicArray[i]}`);
+    }
+        console.log(`resultString: ${resultString}`);
+    
+    // create String of Array[1]
+    var resultAnswer = `The numbers ${resultString} have a product of ${productAnswer}.`;
+    myArray[1] = resultAnswer;
+        console.log(`resultAnswer: ${resultAnswer}`);
+    return myArray;
+}
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
