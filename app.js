@@ -14,14 +14,15 @@ function sum(a, b) {
     var myArray = [];
     var sumAnswer = a + b;
     myArray[0] = sumAnswer;
-        console.log(sumAnswer);
+        console.log(`sumAnswer: ${sumAnswer}`);
     var result = `The sum of ${a} and ${b} is ${sumAnswer}.`;
     myArray[1] = result;
-        console.log(result);
+        console.log(`result: ${result}`);
     return myArray;
 }
 
 // Here is the test for sum(); uncomment it to run it
+
 testSum(4,7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -44,14 +45,15 @@ function multiply(a, b) {
     var myArray = [];
     var multAnswer = a * b;
     myArray[0] = multAnswer;
-        console.log(multAnswer);
+        console.log(`multAnswer: ${multAnswer}`);
     var result = `The product of ${a} and ${b} is ${multAnswer}.`
     myArray[1] = result;
-        console.log(result);
+        console.log(`result: ${result}`);
     return myArray;
 }
 
 // Here is the test for multiply(); uncomment it to run it
+
 testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
@@ -77,6 +79,7 @@ testMultiply(5,9);
 // uncomment the call for the testSumAndMultiply() function and see if the test passes.
 
 // Write your code here
+
 function sumAndMultiply(a, b, c) {
     var myArray = [];
     var sumAnswer = sum(sum(a, b)[0], sum(b, c)[0])[0] - b;
@@ -84,41 +87,58 @@ function sumAndMultiply(a, b, c) {
         console.log(sumAnswer);
     var productAnswer = multiply(multiply(a, b)[0], c)[0];
     myArray[1] = productAnswer;
-        console.log(productAnswer);
+        console.log(`productAnswer: ${productAnswer}`);
     var sumResult = `${a} and ${b} and ${c} sum to ${sumAnswer}.`;
     myArray[2] = sumResult;
-        console.log(sumResult);
+        console.log(`sumResult: ${sumResult}`);
     var productResult = `The product of ${a} and ${b} and ${c} is ${productAnswer}.`;
     myArray[3] = productResult;
-        console.log(productResult);
+        console.log(`productResult: ${productResult}`);
     return myArray;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
+
 testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
-/* Problem 4
-Write a function called sumArray() that takes in an array of numbers as its single argument and then returns an array where the first element is the sum of the numbers in the array, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
+// Problem 4
+// Write a function called sumArray() that takes in an array of numbers as its single argument
+// and then returns an array where the first element is the sum of the numbers in the array,
+// and the second element is a string that EXACTLY follows this example
+// and uses the values that were input into the function:
 
-"2,3,4 was passed in as an array of numbers, and 9 is their sum."
+// "2,3,4 was passed in as an array of numbers, and 9 is their sum."
 
-IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To do addition, use your sum() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
+// IMPORTANT DETAIL: You may not use the arithmetic operator + in this function.
+// To do addition, use your sum() function that you've already created.
+// You're going to have to be resourceful to figure out how to do this.
+// However, you may continue to use the + operator for string concatenation.
 
-Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
+// Test this function by hand in the console to get it working,
+// and when you think it is finished, uncomment the call for the testSumArray() function
+// and see if the test passes.
 
 // Write your code here
-/* var testArray = [2, 3, 4]; //eslint-disable-line
 
-function sumArray(sumArr) { //eslint-disable-line
+var testArray = [2, 3, 4];
 
-} */
+function sumArray(testArray) {
+    var myArray = [];
+    var sumAnswer = sum(sum(testArray[0], testArray[1])[0], sum(testArray[1], testArray[2])[0])[0] - testArray[1];
+    myArray[0] = sumAnswer;
+        console.log(`sumAnswer: ${sumAnswer}`);
+    var resultAnswer = `${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${sumAnswer} is their sum.`;
+    myArray[1] = resultAnswer;
+        console.log(`resultAnswer: ${resultAnswer}`);
+    return myArray;
+}
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 

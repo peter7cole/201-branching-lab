@@ -8,3 +8,6 @@ Branch 2: QUESTION2
     multiply an array
 Branch 3: QUESTION3
     sum and multiply
+Branch 4: QUESTION4
+    array addition, fixed console.logs in other questions to be more descriptive
+
