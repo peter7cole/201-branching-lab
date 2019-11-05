@@ -215,17 +215,18 @@ function multiplyAnyArray(testDynamicArray) {
     
     // calculate product for any length array
     var productAnswer = 1;
-    for (var i=0; testDynamicArray.length > i; i++) {
-        var result = multiply(productAnswer, testDynamicArray[i])[0];
-        productAnswer = result;
+    for (var i = 0; testDynamicArray.length > i; i++) {
+        var productAnswer = multiply(productAnswer, testDynamicArray[i])[0];
+        // var result = multiply(productAnswer, testDynamicArray[i])[0]; OLD CODE
+        // productAnswer = result; OLD CODE
     }
     myArray[0] = productAnswer;
         console.log(`productAnswer: ${productAnswer}`);
     
     // create String for any length array
     var resultString = `${testDynamicArray[0]}`;
-    for (var i=1; testDynamicArray.length > i; i++) {
-        resultString = resultString.concat(`,${testDynamicArray[i]}`);
+    for (var stringIndex = 1; testDynamicArray.length > stringIndex; stringIndex++) {
+        resultString = resultString.concat(`,${testDynamicArray[stringIndex]}`);
     }
         console.log(`resultString: ${resultString}`);
     
