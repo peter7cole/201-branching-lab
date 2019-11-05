@@ -1,6 +1,7 @@
-# LAB 5 - BRANCHING
+## LAB 5 - BRANCHING
 
 _v1 11/1/19_ Peter Cole
+
 Experience with branch merging and array mathematics.
 
 Branch 1: QUESTION1
@@ -22,4 +23,5 @@ Branch 6: QUESTION6
     array multiplication of any length
 
 _v2 11/5/19_ Peter Cole
+
 Cleaned up question 6
